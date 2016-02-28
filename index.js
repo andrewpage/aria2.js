@@ -1,5 +1,14 @@
 'use strict';
 
-var AriaClient = require('./aria-client.js');
+var Ariaria = function(hostname, port) {
+  this.hostname = hostname;
+  this.port = port;
+};
 
-module.exports = {};
+Ariaria.prototype = {
+  downloadFile: function(input, output) {
+    console.log('Downloading file from ' + input + ' to ' + output);
+  }
+};
+
+module.exports = Ariaria;
