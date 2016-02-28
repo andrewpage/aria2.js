@@ -17,11 +17,14 @@
     "unix",
     "web",
     "parsing",
-    "wrapper"
+    "wrapper",
     "api"
   ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/andrewpage/ariaria/issues"
+  },
+  "dependencies": {
+    "jasmine": "2.4.0"
   }
 }
