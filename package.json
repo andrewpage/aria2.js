@@ -5,7 +5,7 @@
   "author": "Andrew Page",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,9 @@
     "url": "https://github.com/andrewpage/ariaria/issues"
   },
   "dependencies": {
-    "jasmine": "2.4.0"
+    "request": "2.69.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
   }
 }
