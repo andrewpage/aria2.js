@@ -5,7 +5,7 @@
   "author": "Andrew Page",
   "main": "index.js",
   "scripts": {
-    "test": "echo jasmine"
+    "test": "./node_modules/.bin/jasmine"
   },
   "repository": {
     "type": "git",
