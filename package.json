@@ -2,10 +2,26 @@
   "name": "ariaria",
   "version": "0.0.1",
   "description": "Node.js wrapper of the aria2 download manager.",
+  "author": "Andrew Page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo jasmine"
   },
-  "author": "Andrew Page <andrew@andrewpage.me>",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewpage/ariaria"
+  },
+  "keywords": [
+    "download",
+    "manager",
+    "unix",
+    "web",
+    "parsing",
+    "wrapper"
+    "api"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewpage/ariaria/issues"
+  }
 }
