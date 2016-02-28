@@ -27,6 +27,27 @@ Ariaria.prototype = {
     });
   },
 
+  addURI: function(uris, options, responseCallback) {
+    if(typeof callback === 'undefined') {
+      responseCallback = options;
+      options = {};
+    }
+
+    var params = [ uris ];
+    if(options.position) params.push(options.position);
+
+    this.performRequest({
+      action: 'aria2.addUri',
+      params: params,
+      callback: function(body) {
+        if(body.result) responseCallback(body.result);
+      }
+    });
+  },
+
+  /**
+   * Initialize a request to the aria2 server.
+   */
   performRequest: function(options) {
     var url = this.getRequestURL(),
         payload = this.buildPayload(options.action, options.params),
@@ -37,7 +58,13 @@ Ariaria.prototype = {
     });
   },
 
+  /**
+   * Aria2 request payload.
+   */
   buildPayload: function(action, params) {
+    // Prepend the params array with a secret token if one is specified.
+    if(this.secretToken) params.unshift('token:' + this.secretToken);
+
     return {
       "jsonrpc" : "2.0",
       "id" : "pem",
@@ -46,6 +73,9 @@ Ariaria.prototype = {
     };
   },
 
+  /**
+   * URL endpoint for aria2 API requests.
+   */
   getRequestURL: function() {
     return 'http://' + this.host + ':' + this.port + '/jsonrpc';
   }

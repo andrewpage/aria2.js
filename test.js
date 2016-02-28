@@ -5,6 +5,6 @@ var client = new Ariaria({
   'port': '6800'
 });
 
-client.verifyConnection(function(isConnected) {
-  if(isConnected) console.log('We are connected');
+client.addURI([ 'http://google.com' ], function(gid) {
+  console.log(gid);
 });
